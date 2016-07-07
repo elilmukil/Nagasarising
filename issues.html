@@ -1,0 +1,256 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Raleway" />
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+<link href="default.css" rel="stylesheet" type="text/css" media="all" />
+<link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function() {	
+	
+	/**
+	 * store the value of and then remove the title attributes from the
+	 * abbreviations (thus removing the default tooltip functionality of
+         * the abbreviations)
+	 */
+	$('abbr').each(function(){		
+		
+		$(this).data('title',$(this).attr('title'));
+		$(this).removeAttr('title');
+	
+	});
+
+        /**
+	 * when abbreviations are mouseover-ed show a tooltip with the data from the title attribute
+	 */	
+	$('abbr').mouseover(function() {		
+		
+		// first remove all existing abbreviation tooltips
+		$('abbr').next('.tooltip').remove();
+		
+		// create the tooltip
+		$(this).after('<span class="tooltip">' + $(this).data('title') + '</span>');
+		
+		// position the tooltip 4 pixels above and 4 pixels to the left of the abbreviation
+		var left = $(this).position().left + $(this).width() + 4;
+		var top = $(this).position().top - 4;
+		$(this).next().css('left',left);
+		$(this).next().css('top',top);				
+		
+	});
+	
+	/**
+	 * when abbreviations are clicked trigger their mouseover event then fade the tooltip
+	 * (this is friendly to touch interfaces)
+	 */
+	$('abbr').click(function(){
+		
+		$(this).mouseover();
+		
+		// after a slight 2 second fade, fade out the tooltip for 1 second
+		$(this).next().animate({opacity: 0.9},{duration: 2000, complete: function(){
+			$(this).fadeOut(1000);
+		}});
+		
+	});
+	
+	/**
+	 * Remove the tooltip on abbreviation mouseout
+	 */
+	$('abbr').mouseout(function(){
+			
+		$(this).next('.tooltip').remove();				
+
+	});	
+	
+});
+</script>
+</head>
+<body><!-- 
+<div id="logo" class="container">
+	<h1><a href="#">Well<span>Formed</span></a></h1>
+	<p>Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a></p>
+</div> -->
+<div class="container">
+<div id="menu" class="container">
+	<ul>
+		<li ><a href="index.html" class="design" accesskey="1" title="">Homepage</a></li>
+		<li><a href="whychange.html" class="design" accesskey="1" title="">Why Change ?</a></li>
+		<li class="current_page_item"><a href="issues.html" class="design" accesskey="2" title="">Issues</a></li>
+	
+  <li class="dropdown">
+   <a href="#" id="des" class="design1">Meet Me</a>
+  
+    <div  class="dropdown-content" >
+    
+   <a href="who.html">   who am I? 
+   </a> 
+   
+  <a href="background.html">My Background</a>
+   
+    <a href="contactme.html" >contact me</a>
+    </div>
+ 
+  </li>
+  <li > <img style="padding-left:50x;margin-left:80%;" src="images/logo.jpg" width="60" height="50"  alt="" align="center"/></li>
+  
+</ul>
+
+  
+</div>
+<div id="cont" >
+<div id="issues" >
+<div id="fbox1" >
+<a  href="restoring.html"  style="text-decoration: none"><abbr title="click on the picture for more details">
+ <img src="images/logo.jpg" width="500" height="300"  alt="" align="center"/>
+ <h2 class="title" >  Restoring Our Honor </h2></abbr></a></div>
+
+ 
+ <div id="fbox2" ><a  href="revenue.html"  style="text-decoration: none"><abbr title="click on the picture for more details">
+ <img src="images/revgen.jpg" width="500" height="300"  alt="" align="center"/>
+ <h2 class="title" align="center"> Revenue Generation
+
+</h2></abbr></a></div>
+ 
+ </div>
+ <div id="issues" >
+<div id="fbox1" >
+<a  href="educationreform.html"  style="text-decoration: none"><abbr title="click on the picture for more details">
+ <img src="images/education.jpg" width="500" height="300"  alt="" align="center"/>
+ <h2 class="title"  >Education Reform
+</h2></abbr></a></div>
+ 
+ 
+ <div id="fbox2" >
+ <a  href="jobs.html"  style="text-decoration: none"><abbr title="click on the picture for more details">
+ <img src="images/jobs.jpg" width="500" height="300"  alt="" align="center"/>
+ <h2 class="title" align="center"> Jobs and Oppurtunities
+
+</h2></abbr></a></div>
+ 
+ </div>
+ <div id="issues" >
+<div id="fbox1" >
+<a  href="debtcontrol.html"  style="text-decoration: none"><abbr title="click on the picture for more details">
+ <img src="images/dept.png" width="500" height="300"  alt="" align="center"/>
+ <h2 class="title"  >Government Spending Control
+
+</h2></abbr></a></div>
+ 
+ 
+ <div id="fbox2" >
+ <a  href="bureau.html"  style="text-decoration: none"><abbr title="click on the picture for more details">
+ <img src="images/bureaucracy.png" width="500" height="300"  alt="" align="center"/>
+ <h2 class="title" align="center"> Bureaucracy Reform
+
+</h2></abbr></a></div>
+ 
+ </div>
+ <div id="issues" >
+<div id="fbox1" >
+<a  href="indo_naga.html"  style="text-decoration: none"><abbr title="click on the picture for more details">
+ <img src="images/indonaga.png" width="500" height="300"  alt="" align="center"/>
+ <h2 class="title"  >Indo-Naga Political Issue
+
+
+</h2></abbr></a></div>
+ 
+ 
+ <div id="fbox2" >
+ <a  href="law.html"  style="text-decoration: none"><abbr title="click on the picture for more details">
+ <img src="images/law.png" width="400" height="300"  alt="" align="center"/>
+ <h2 class="title" align="center"> Enforcement of Law & Order
+
+
+</h2></abbr></a></div>
+ 
+ </div>
+ 
+ <div id="issues" >
+<div id="fbox1" >
+<a  href="infrastructure.html"  style="text-decoration: none"><abbr title="click on the picture for more details">
+ <img src="images/infras.png" width="500" height="300"  alt="" align="center"/>
+ <h2 class="title"  >Infrastructural development
+
+
+</h2></abbr></a></div>
+ 
+ 
+ <div id="fbox2" >
+ <a  href="travels.html"  style="text-decoration: none"><abbr title="click on the picture for more details">
+ <img src="images/trans.jpg" width="500" height="300"  alt="" align="center"/>
+ <h2 class="title" align="center"> Transportation & Communication
+
+
+
+</h2></abbr></a></div>
+ 
+ </div>
+  
+ 
+ <div id="issues" >
+<div id="fbox1" >
+<a  href="tourism.html"  style="text-decoration: none"><abbr title="click on the picture for more details">
+ <img src="images/tourism.png" width="500" height="300"  alt="" align="center"/>
+ <h2 class="title"  >Green Tourism
+
+</h2></abbr></a></div>
+ 
+ 
+ <div id="fbox2" >
+ <a  href="village.html"  style="text-decoration: none"><abbr title="click on the picture for more details">
+ <img src="images/village.png" width="500" height="300"  alt="" align="center"/>
+ <h2 class="title" align="center">   Village Upgradation
+
+</h2></abbr></a></div>
+</div>
+ <div id="issues" >
+<div id="fbox1" >
+<a  href="gender.html"  style="text-decoration: none"><abbr title="click on the picture for more details">
+ <img src="images/gender.png" width="400" height="400"  alt="" align="center"/>
+ <h2 class="title"  >Gender Equality & Disability Rights
+
+
+
+</h2></abbr></a></div>
+ 
+ 
+ <div id="fbox2" >
+ <a  href="crimejustice.html"  style="text-decoration: none"><abbr title="click on the picture for more details">
+ <img src="images/justicereform.jpg" width="400" height="400"  alt="" align="center"/>
+ <h2 class="title" align="center"> Criminal Justice Reform
+
+
+
+</h2></abbr></a></div>
+
+ 
+ </div>
+ <div id="issues" >
+<div id="fbox1" >
+<a  href="ecogrowth.html"  style="text-decoration: none"><abbr title="click on the picture for more details">
+ <img src="images/ecp.png" width="500" height="300"  alt="" align="center"/>
+ <h2 class="title" >  Economic Growth & Productivity</h2></abbr></a></div>
+ <div id="fbox2" >
+<a  href="first100.html"  style="text-decoration: none"><abbr title="click on the picture for more details">
+ <img src="images/first100.png" width="500" height="300"  alt="" align="center"/>
+ <h2 class="title" >  The First 100 Days </h2></abbr></a></div>
+ </div>
+ </div>
+ <div id="copyright"  class="copy">
+	<p>&copy;  Mazie Nakhro. All rights reserved | Developed by Vignesh Duraisamy</p>
+	</div>
+</div>
+
+ 
+</body>
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Raleway" />
+ <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+<link href="default.css" rel="stylesheet" type="text/css" media="all" />
+<link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function() {	
+	
+	/**
+	 * store the value of and then remove the title attributes from the
+	 * abbreviations (thus removing the default tooltip functionality of
+         * the abbreviations)
+	 */
+	$('abbr').each(function(){		
+		
+		$(this).data('title',$(this).attr('title'));
+		$(this).removeAttr('title');
+	
+	});
+
+        /**
+	 * when abbreviations are mouseover-ed show a tooltip with the data from the title attribute
+	 */	
+	$('abbr').mouseover(function() {		
+		
+		// first remove all existing abbreviation tooltips
+		$('abbr').next('.tooltip').remove();
+		
+		// create the tooltip
+		$(this).after('<span class="tooltip">' + $(this).data('title') + '</span>');
+		
+		// position the tooltip 4 pixels above and 4 pixels to the left of the abbreviation
+		var left = $(this).position().left + $(this).width() + 4;
+		var top = $(this).position().top - 4;
+		$(this).next().css('left',left);
+		$(this).next().css('top',top);				
+		
+	});
+	
+	/**
+	 * when abbreviations are clicked trigger their mouseover event then fade the tooltip
+	 * (this is friendly to touch interfaces)
+	 */
+	$('abbr').click(function(){
+		
+		$(this).mouseover();
+		
+		// after a slight 2 second fade, fade out the tooltip for 1 second
+		$(this).next().animate({opacity: 0.9},{duration: 2000, complete: function(){
+			$(this).fadeOut(1000);
+		}});
+		
+	});
+	
+	/**
+	 * Remove the tooltip on abbreviation mouseout
+	 */
+	$('abbr').mouseout(function(){
+			
+		$(this).next('.tooltip').remove();				
+
+	});	
+	
+});
+</script>
+
+</head>
+<body>
+<div class="container">
+<div id="menu" class="container">
+	<ul>
+		<li ><a href="index.html" class="design" accesskey="1" title="">Homepage</a></li>
+		<li><a href="whychange.html" class="design" accesskey="1" title="">Why Change ?</a></li>
+		<li><a href="issues.html" class="design" accesskey="2" title="">Issues</a></li>
+	
+  <li class="dropdown">
+   <a href="#" id="des" class="design1">Meet Me</a>
+  
+    <div  class="dropdown-content" >
+    
+   <a href="who.html">   who am I? 
+   </a> 
+   
+  <a href="background.html">My Background</a>
+   
+    <a href="contactme.html" >contact me</a>
+    </div>
+ 
+  </li>
+<li > <img style="padding-left:50x;margin-left:80%;" src="images/logo.jpg" width="60" height="50"  alt="" align="center"/></li>  
+</ul>
+
+
+  
+</div>
+<div id="cont">
+<div id="footer">
+	<div id="fbox1"></br>
+	
+	<img src="images/family.jpg" width="650"  height="500"  alt="" /> 
+		 </div>
+		 
+	
+	<div id="fbox2">
+		<h2 class="title">Social Media</h2>
+		<ul class="style1">
+			<li class="first"><a href="https://twitter.com/"><img style="padding-left:70px;" src="images/twitter.png" width="40" height="40"></img></i></a></li></br>
+			<li class="first"><a href="https://www.facebook.com/"><img style="padding-left:70px;" src="images/fb.png" width="40" height="40"></img></a></li></br>
+			<li class="first"><a href="https://www.linkedin.com/"><img style="padding-left:70px;" src="images/ln.png" width="40" height="40"></img></a></li></br>
+			<li class="first"><a href="https://plus.google.com"><img style="padding-left:70px;" src="images/gplus.png" width="40" height="40"></img></a></li></br>
+		
+		</ul>
+	</div>
+</div>  
+<div id="contact">
+	
+		<div id="fbox1" >
+		
+		<h2 class="fon" >Contact Me:</br></br></h2>
+		
+		
+		<p><span id="text"> Mazie Nakhro, PhD
+		
+		</br>
+Mission Facilitators</br>
+
+<span style="font-size:15px;">
+
+Powering Leaders & Org. to Achieve Audacious Goals</span></br>
+
+          E-mail: nakhro@sbcglobal.net   </span></p>
+      
+			</div>
+		<div id="fbox2">
+		<span id="text">
+	<h2 class="fon"><span  style="font-size:25px;">Drop me a Message:</span></h2></br>
+	
+<form name="contactform" method="post" action="contactengine.php">
+ 
+<table width="400px">
+ 
+<tr>
+ 
+ <td valign="top">
+ 
+  <label for="Name">Name*</label>
+ 
+ </td>
+ 
+ <td valign="top">
+ 
+  <input  type="text" name="Name" id="Name" maxlength="50" size="30">
+ 
+ </td>
+ 
+</tr>
+ 
+
+ 
+ 
+ 
+<tr>
+ 
+ <td valign="top">
+ 
+  <label for="email">Email Address *</label>
+ 
+ </td>
+ 
+ <td valign="top">
+ 
+  <input  type="text" name="Email"  id="Email" maxlength="80" size="30">
+ 
+ </td>
+ 
+</tr>
+ 
+<tr>
+ 
+ <td valign="top">
+ 
+  <label for="telephone">Telephone Number</label>
+ 
+ </td>
+ 
+ <td valign="top">
+ 
+  <input  type="text" name="Tel" id="Tel" maxlength="30" size="30">
+ 
+ </td>
+ 
+</tr>
+ 
+<tr>
+ 
+ <td valign="top">
+ 
+  <label for="Message">Message</label>
+ 
+ </td>
+ 
+ <td valign="top">
+ 
+  <textarea  name="Message" id="Message" maxlength="1000" cols="29" rows="10"></textarea>
+ 
+ </td>
+ 
+</tr>
+ 
+<tr>
+ 
+ <td colspan="2" style="text-align:center">
+ 
+  <input class="button" type="submit" name="Submit" value="Submit" >   
+ 
+ </td>
+ 
+</tr>
+ 
+</table>
+ 
+</form>
+</span>
+		</div>
+		
+		
+	</div>
+</div> 
+<div id="copyright"  class="copy">
+	<p>&copy;  Mazie Nakhro. All rights reserved | Developed by Vignesh Duraisamy</p>
+	</div>
+</div>
+
+</body>
+</html>
