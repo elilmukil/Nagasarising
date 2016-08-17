@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title></title>
+<title>Welcome to Nagaland</title>
 
 
 
@@ -17,23 +17,12 @@
 <link href="default.css" rel="stylesheet" type="text/css" media="all" />
 <link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
 <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js?ver=1.3.2'></script>
-    <script type="text/javascript">
-        $(function() {
-            var offset = $("#sidebar").offset();
-            var topPadding = 15;
-            $(window).scroll(function() {
-                if ($(window).scrollTop() > offset.top) {
-                    $("#sidebar").stop().animate({
-                        marginTop: $(window).scrollTop() - offset.top + topPadding
-                    });
-                } else {
-                    $("#sidebar").stop().animate({
-                        marginTop: 0
-                    });
-                };
-            });
-        });
-    </script>
+    <script>
+function myFunction() {
+    alert("error");
+}
+</script>      
+    
 
 </head>
 <body>
@@ -41,31 +30,80 @@
 
 <div id="menu" class="container">
 	<ul>
-		<li class="current_page_item"><a href="index.html" class="design" accesskey="1" title="">Homepage</a></li>
-		<li ><a href="whychange.html" class="design" accesskey="1" title="">Why Change ?</a></li>
-		<li><a href="issues.html" class="design" accesskey="2" title="">Issues</a></li>
+		<li ><a href="index.html" class="design" accesskey="1" title="">Homepage</a></li>
+		<li><a href="whychange.html" class="design" accesskey="1" title="">Why Change ?</a></li>
+		
+  <li class="dropdown1"  >
+   <a href="#" id="des" class="design2">Issues</a>
+  
+    <div  class="dropdown-content1"  >
+  
+       <table class="color"  >
+    <tr>
+       <td class="fontdes"><a href="restoring.html">   Restoring Our honor </a></td>
+    <td class="fontdes"><a href="bureau.html">Bureaucracy Reform</a></td>
+    <td class="fontdes"><a href="crimejustice.html">Criminal justice System reform</a></td>
+    
+<td class="fontdes"><a href="ecogrowth.html">Economic growth & productivity</a></td>
+
+ 
+
+
+
+</tr>
+<tr>
+<td class="fontdes"><a href="educationreform.html">Educational Reform</a></td>
+<td class="fontdes"><a href="law.html">Enforcement <span style="text-transform: lowercase;">of </span>law & order</a></td>
+<td  class="fontdes"><a href="gender.html">Gender  equality  & disability rights</a></td>
+<td class="fontdes"><a href="debtcontrol.html">Government Spending control</a></td>
+
+
+
+
+</tr>
+<tr>
+<td class="fontdes"><a href="tourism.html">Green tourism</a></td>
+
+<td class="fontdes"><a href="indo_naga.html">Indo-Naga political issue</a></td>
+<td class="fontdes"><a href="infrastructure.html">Infrastructure development</a></td>
+<td class="fontdes"><a href="jobs.html">Jobs & Opportunities</a></td>
+
+
+
+</tr>
+<tr>
+   <td class="fontdes"> <a href="revenue.html">Revenue Generation</a></td>
+<td class="fontdes"><a href="travels.html">Transport & Communication</a></td>
+
+<td class="fontdes"><a href="village.html">Village upgradation</a></td>
+<td class="fontdes"><a href="first100.html">First 100 days</a></td>
+
+</tr>
+</table>
+    </div>
+ 
+  </li>
 	
   <li class="dropdown">
    <a href="#" id="des" class="design1">Meet Me</a>
   
     <div  class="dropdown-content" >
     
-   <a href="who.html">   who am I? 
+   <a href="who.html">   Who Am I? 
    </a> 
    
   <a href="background.html">My Background</a>
-   
-    <a href="contactme.html" >contact me</a>
+
     </div>
  
   </li>
-  <li > <img style="padding-left:50x;margin-left:80%;" src="images/logo.jpg" width="60" height="50"  alt="" align="center"/></li>
+ <li><a href="contactme.html" class="design" accesskey="2" title="">Contact Us</a></li>
   
 </ul>
 
   
 </div>
-<div id="page" class="container">
+
 <!-- 
 <div>
 	<div id="fb1">
@@ -75,22 +113,46 @@
 			 <img src="images/logo.jpg" class="img-circle" alt="Cinque Terre" width="124" height="106"></img></div>
 			 </div>
 			 <div   id="animsize" > <center>  <span class="animation"> <marquee direction="left" behavior="alternate" >  Let’s Take Nagaland to the Top</marquee></span></center></div> -->
+
+ <div id="homepage"  class="container">
  
  
+
  <div class="relative">
- <img id="gap" src="images/train.gif" width="1200" height="600" alt="" /> 
- <div class="absolute" >
- <p class="firstline">Get on the train & join the movement</p>
- <P class="secondline">LET'S TAKE NAGALAND TO THE TOP</P></div>
+ <img  src="images/train.gif" width="1200" height="600" alt="" /> </div>
+
+
+
+
+ <div class="track">
  
+
  
- 
-</div>
-  
- 
-<div id="copyright"  class="copy">
+
+<div id="copyrightindex" class="copyindex" >
 	<p>&copy;  Mazie Nakhro. All rights reserved | Developed by Vignesh Duraisamy</p>
 	</div>
+
+</div>
+ <div class="absolute" >
+ </div>
+ <div class="textfirst">
+ <p class="firstline">Get on the train & join the movement</p>
+ <P class="secondline"> LET'S TAKE NAGALAND TO THE TOP</P></div>
+
+  <div class="join"></div>
+ <div class="jointext">
+ <p class="campaign">Join the campaign</p>
+<form id="formdesign" name="joinform" method="post" action="join.php">
+
+ <div id="email">Email</div>
+   <input  id="emailbox" type="text" name="Email"  id="Email" maxlength="90" size="30"></input>
+   
+   </br>
+ <input class="joinbutton" type="submit" name="Submit" value="I'm in!" onclick="myFunction"> </input>
+ </form>
+ 
+ </div>
 </div>
 </body>
 </html>
